@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_goal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_edittext"
+    android:padding="8dp"
+    android:layout_marginTop="8dp">
+
+    <TextView
+        android:id="@+id/tv_stt"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="#1:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/goal_item_tv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textColor="@android:color/black" />
+
+
+
+</LinearLayout>
+

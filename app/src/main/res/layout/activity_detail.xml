@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Activity.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/ln_bottom"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ln_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_done"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_edittext"
+                android:gravity="top"
+                android:minHeight="100dp"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/edit_goal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="textMultiLine"
+                    android:text="@string/your_goal_must_be_specific_in_number_the_date_of_achievement_and_in_present_tense"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title_tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/when_you_achieve_your_goal_what_would_you_do_upload_some_images_to_visualize_that"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="italic|bold" />
+
+            <com.nhattuan.growrichs.ultil.ButtonPlus
+                android:id="@+id/upload_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/next_bt"
+                android:foreground="@drawable/ripple_effect"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/upload_images"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/image_recylerview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ln_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.nhattuan.growrichs.ultil.ButtonPlus
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/next_bt"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.nhattuan.growrichs.ultil.ButtonPlus
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/next_bt"
+            android:text="@string/button_ok"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:id="@+id/ln_song"
+    android:padding="5dp" >
+
+    <CheckedTextView
+        android:id="@+id/checked_text_item"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:paddingLeft="32dp"
+        android:gravity="center_vertical"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:checkMark="@drawable/check_box_selector"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@android:color/white"
+        android:layoutDirection="rtl"
+        android:paddingBottom="16dp"
+       >
+
+    </CheckedTextView>
+
+    <ImageButton
+        android:id="@+id/img_btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_play_arrow_black_24dp"
+        android:tint="@android:color/white"
+        android:background="@android:color/transparent"
+        android:padding="8dp"
+       />
+
+</LinearLayout>

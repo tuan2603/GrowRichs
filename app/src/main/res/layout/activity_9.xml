@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Activity.Activity9">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_done"
+        >
+        <LinearLayout
+            android:id="@+id/ln_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_done"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+            <com.nhattuan.growrichs.ultil.TextviewPlus
+                android:id="@+id/title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/write_out_your_financial_goal_per_year_you_intend_to_earn_soon"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/remember_your_financial_reward_in_life_will_be_exactly_proportional_to_your_contribution_your_service"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="16dp"
+               />
+
+            <TextView
+                android:id="@+id/tv_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/your_goal_must_be_specific_in_number_the_date_of_achievement_and_in_present_tense"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="16dp"
+               />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:layout_marginTop="16dp"
+                android:gravity="top"
+                android:padding="8dp"
+                android:minHeight="100dp"
+                >
+                <EditText
+                    android:id="@+id/edit_goal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/activity9edit"
+                    android:inputType="textMultiLine"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.nhattuan.growrichs.ultil.ButtonPlus
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:textColor="@android:color/white"
+        android:background="@drawable/next_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</android.support.constraint.ConstraintLayout>

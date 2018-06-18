@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorApp"
+    android:orientation="vertical"
+    tools:context=".Activity.ListSongActivity">
+
+    <com.nhattuan.growrichs.ultil.TextviewPlus
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="Select A Ringtone"
+        android:padding="16dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical|center_horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/song_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+    <LinearLayout
+        android:id="@+id/ln_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:background="#b9000000"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorApp"
+            android:padding="8dp"
+            >
+            <com.nhattuan.growrichs.ultil.ButtonPlus
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.95"
+                android:background="@drawable/next_bt"
+                android:foreground="@drawable/ripple_effect"
+                android:text="@string/cancel"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"></View>
+
+            <com.nhattuan.growrichs.ultil.ButtonPlus
+                android:id="@+id/btn_done"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.95"
+                android:background="@drawable/next_bt"
+                android:foreground="@drawable/ripple_effect"
+                android:text="@string/done"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+
+
+            <TextView
+                android:id="@+id/tv_seekto"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="00:00"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                />
+            <SeekBar
+                android:id="@+id/seekbar_audio"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="32dp"
+                android:padding="5dp"
+                />
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:text="00:00"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

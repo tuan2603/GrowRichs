@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorApp"
+    android:padding="16dp"
+    tools:context=".Activity.VisualizingActivity">
+
+    <com.nhattuan.growrichs.ultil.ButtonPlus
+        android:id="@+id/btn_make_goal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Make Your Own Goal Card?"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:foreground="@drawable/ripple_effect"
+        android:background="@drawable/next_bt"
+        android:layout_alignParentTop="true"
+        />
+
+    <LinearLayout
+        android:id="@+id/ln_slide"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/btn_make_goal"
+
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </android.support.v4.view.ViewPager>
+
+
+        
+        <LinearLayout
+            android:id="@+id/sliderDots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-50dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.nhattuan.growrichs.ultil.ButtonPlus
+        android:id="@+id/btn_secret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listen To The Strangest Secret"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_below="@+id/ln_slide"
+        android:foreground="@drawable/ripple_effect"
+        android:background="@drawable/next_bt"
+       android:layout_marginTop="16dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_secret"
+        android:layout_above="@+id/btn_close"
+        >
+
+        <com.nhattuan.growrichs.ultil.TextviewPlus
+            android:id="@+id/tv_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Got troubles ? Need my help ?"
+            android:textSize="14sp"
+            android:padding="16dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@android:color/white"
+            android:textStyle="bold|italic"
+
+            />
+
+    </RelativeLayout>
+
+
+
+
+    
+
+    <com.nhattuan.growrichs.ultil.ButtonPlus
+        android:id="@+id/btn_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I’m Done With This!"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:foreground="@drawable/ripple_effect"
+        android:layout_alignParentBottom="true"
+       android:layout_marginTop="16dp"
+        android:background="@drawable/next_bt"
+        />
+
+</RelativeLayout>

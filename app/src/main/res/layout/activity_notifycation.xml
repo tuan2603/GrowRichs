@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorApp"
+    android:orientation="vertical"
+    tools:context=".Activity.NotifyActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:id="@+id/app_logo"
+        android:src="@drawable/logo_trans"
+        android:padding="16dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/FullMessage"
+                android:padding="16dp"
+                android:textSize="16dp"
+                android:text="Chicky boom guys, enjoy your day and don't forget to listen to The Strangest Secret . Click on the link below."
+                android:textColor="@android:color/black"
+                />
+
+            <TextView
+                android:id="@+id/linkURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="https://www.facebook.com/personalgoalcard/"
+                android:textSize="14sp"
+                android:padding="16dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#1d8ba1"
+                />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:text="LOVE IT"
+            android:layout_margin="8dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/loveit"
+            />
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

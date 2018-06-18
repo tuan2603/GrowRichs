@@ -1,0 +1,63 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+    <style name="MyGallery" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="toolbar">@style/Toolbar.Dracula</item>
+        <item name="album.dropdown.title.color">@color/dracula_album_dropdown_title_text</item>
+        <item name="album.dropdown.count.color">@color/dracula_album_dropdown_count_text</item>
+        <item name="album.element.color">@android:color/white</item>
+        <item name="album.thumbnail.placeholder">@android:color/black</item>
+        <item name="album.emptyView">@drawable/ic_empty_dracula</item>
+        <item name="album.emptyView.textColor">@color/dracula_album_empty_view</item>
+        <item name="item.placeholder">@android:color/black</item>
+        <item name="item.checkCircle.backgroundColor">@color/colorApp</item>
+        <item name="item.checkCircle.borderColor">@color/dracula_item_checkCircle_borderColor</item>
+        <item name="page.bg">@android:color/black</item>
+        <item name="bottomToolbar.bg">@android:color/black</item>
+        <item name="bottomToolbar.preview.textColor">@color/dracula_bottom_toolbar_preview</item>
+        <item name="bottomToolbar.apply.textColor">@color/colorApp</item>
+        <item name="preview.bottomToolbar.back.textColor">@color/dracula_preview_bottom_toolbar_back_text</item>
+        <item name="preview.bottomToolbar.apply.textColor">@color/colorApp</item>
+        <item name="android:listPopupWindowStyle">@style/Popup.Dracula</item>
+        <item name="listPopupWindowStyle">@style/Popup.Dracula</item>
+        <item name="capture.textColor">@color/dracula_capture</item>
+    </style>
+
+    <style name="Toolbar.Dracula" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </style>
+
+    <style name="Popup.Dracula" parent="Widget.AppCompat.ListPopupWindow">
+        <item name="android:popupBackground">@android:color/black</item>
+    </style>
+    <style name="MyTimePickerWidgetStyle" parent="@android:style/Widget.Material.TimePicker" tools:targetApi="lollipop">
+        <item name="android:numbersTextColor">@android:color/white</item>
+        <item name="android:numbersInnerTextColor" tools:targetApi="m">@android:color/white</item>
+        <item name="android:numbersSelectorColor">@android:color/white</item>
+        <item name="android:amPmTextColor">@android:color/white</item>
+        <item name="android:divider">@drawable/divider</item>
+    </style>
+    <style name="PauseDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!--<item name="android:windowIsFloating">false</item>-->
+        <!--<item name="android:windowBackground">@color/colorTransparent</item>-->
+        <item name="android:windowAnimationStyle">@style/DialogAnimationUpBot</item>
+    </style>
+    <style name="DialogAnimationUpBot">
+        <item name="android:windowEnterAnimation">@anim/slide_down</item>
+        <item name="android:windowExitAnimation">@anim/slide_bottom</item>
+    </style>
+</resources>

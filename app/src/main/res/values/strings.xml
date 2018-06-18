@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Grow Rich</string>
+    <string name="splash_screen_logan"> Inspired by "\n"" Think and Grow Rich "\n"" -Napoleon Hill- </string>
+    <string name="key_goal">Set Your Goal(s)"\n""And Visualize Your Success</string>
+    <string name="create_personal_goal">Set Your Goal</string>
+    <string name="cancel">Cancel</string>
+    <string name="type_goal">Your Goal + Expected date to complete</string>
+    <string name="detail_help">When you achieve your goal, what would you do?
+        "\n""Upload some images to visualize your dreams...</string>
+    <string name="upload_">Upload</string>
+    <string name="ring_tone">Ringtone</string>
+    <string name="default_ringtone">Default ringtone(24)</string>
+    <string name="snooze">Snooze</string>
+    <string name="off">Off</string>
+    <string name="go_to_sleep">Now Pick The Time Right Before You Go To Sleep...</string>
+    <string name="btn_start">Start Visualizing</string>
+    <string name="btn_stop">Snooze</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="logans_serect">Change Your Life in 19 Minutes "\n"" -Earl Nightingale-</string>
+    <string name="serect_listen">Listen to The Strangest Secret</string>
+    <string name="facebook_app_id">351437785260890</string>
+    <string name="default_notification_channel_id">351437785260890</string>
+    <string name="notifications_admin_channel_name">GOAL CARD</string>
+    <string name="notifications_admin_channel_description">Messages</string>
+    <string name="secret_top">Now listen to the following SHORT recording first…</string>
+    <string name="secret_two">This timeless lesson is appreciated by more than 1.680.100 people worldwide</string>
+    <string name="activity8">Do you want to achieve your financial goal ? If there is a proven way to achieve it , will you commit to follow no matter what ?</string>
+    <string name="done">Done</string>
+    <string name="no">No</string>
+    <string name="next">Next</string>
+    <string name="activity9edit">I make 20% more of income in …</string>
+    <string name="detailtop">“Remember your financial reward in life will be exactly proportional to your contribution , your service”</string>
+    <string name="when_you_achieve_your_goal_what_would_you_do_upload_some_images_to_visualize_that">When you achieve your goal, what would you do ? Upload some images to visualize that….</string>
+    <string name="your_goal_must_be_specific_in_number_the_date_of_achievement_and_in_present_tense">Your goal must be specific in number , the date of achievement and in present tense</string>
+    <string name="upload_images">Upload images</string>
+    <string name="remember_your_financial_reward_in_life_will_be_exactly_proportional_to_your_contribution_your_service">Remember your financial reward in life will be exactly proportional to your contribution , your service</string>
+    <string name="write_out_your_financial_goal_per_year_you_intend_to_earn_soon">Write Out Your Financial Goal Per Year You Intend To Earn Soon.</string>
+    <string name="activity11">Write out at least 5 new ideas every morning to improve ways what is now being done."\n\n" In other words, list 5 ways to improve your contribution or service to match your income goal."\n\n" Try not to think outside of your work. Keep it in one field. Control. Specialize. You must discipline your thinking !"\n\n" After finishing, pick at least 1 idea and implement it now.</string>
+    <string name="add_a_new_idea">+ Add A New Idea</string>
+</resources>
