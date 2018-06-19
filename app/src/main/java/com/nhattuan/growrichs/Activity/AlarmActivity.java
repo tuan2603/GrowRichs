@@ -68,8 +68,7 @@ public class AlarmActivity extends AppCompatActivity implements MediaController.
     private static int timeHour;
     private static int timeMinute;
 
-    private String mSleep = "Now Pick The Time Right Before You Go To Sleep…";
-    private String mMorning = "Now Pick The Time You Get Up In the Morning...";
+
     private AudioManager audioManager = null;
     private SeekBar volumeSeekbar = null;
     private ImageButton imageButtonPlay;
@@ -107,7 +106,7 @@ public class AlarmActivity extends AppCompatActivity implements MediaController.
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mapWiget();
 
-        tv_title_pick.setText(mMorning);
+
 
 
         final long[] pattern = {0, 2000, 1000};
@@ -333,7 +332,7 @@ public class AlarmActivity extends AppCompatActivity implements MediaController.
         calendar = Calendar.getInstance();
         timePicker = findViewById(R.id.timePicker);
         btn_next = findViewById(R.id.btn_next);
-        set_timepicker_text_colour();
+        //set_timepicker_text_colour();
         tv_title_pick = findViewById(R.id.tv_title_pick);
         btn_ring_tone = findViewById(R.id.btn_ring_tone);
         swt_vibrator = findViewById(R.id.swt_vibrator);

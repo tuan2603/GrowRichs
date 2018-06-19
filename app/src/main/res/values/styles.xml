@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="AppTheme1" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@android:color/black</item>
@@ -45,10 +45,10 @@
         <item name="android:popupBackground">@android:color/black</item>
     </style>
     <style name="MyTimePickerWidgetStyle" parent="@android:style/Widget.Material.TimePicker" tools:targetApi="lollipop">
-        <item name="android:numbersTextColor">@android:color/white</item>
-        <item name="android:numbersInnerTextColor" tools:targetApi="m">@android:color/white</item>
-        <item name="android:numbersSelectorColor">@android:color/white</item>
-        <item name="android:amPmTextColor">@android:color/white</item>
+        <item name="android:numbersTextColor">@android:color/black</item>
+        <item name="android:numbersInnerTextColor" tools:targetApi="m">@android:color/black</item>
+        <item name="android:numbersSelectorColor">@android:color/black</item>
+        <item name="android:amPmTextColor">@android:color/black</item>
         <item name="android:divider">@drawable/divider</item>
     </style>
     <style name="PauseDialog" parent="Theme.AppCompat.Light.Dialog.Alert">

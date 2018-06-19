@@ -1,13 +1,19 @@
 package com.nhattuan.growrichs.Activity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
 
@@ -81,8 +87,7 @@ public class Activity11 extends AppCompatActivity implements GoalAdapter.GoalAda
         mAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent DetailIntent = new Intent(Activity11.this, AlarmActivity.class);
-                startActivity(DetailIntent);
+                Alert();
             }
         });
     }
@@ -90,15 +95,7 @@ public class Activity11 extends AppCompatActivity implements GoalAdapter.GoalAda
     @Override
     protected void onStart() {
         super.onStart();
-        if (new GoalsHelper().getAllObjGoalss().size() > 0) {
-            mGoalList = new GoalsHelper().getAllObjGoalss();
-        } else {
-            mGoalList.add(new ObjGoals(1, "I make 20% more of income in …", System.currentTimeMillis()));
-        }
-
-
-        mGoalAdapter.ChangeList(mGoalList);
-
+        Log.d("aa", "onstart: ");
         scrollview.setSmoothScrollingEnabled(false);
         scrollview.postDelayed(new Runnable() {
             @Override
@@ -109,12 +106,39 @@ public class Activity11 extends AppCompatActivity implements GoalAdapter.GoalAda
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("aa", "onRestart: ");
+        LoadAdapter();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
+        Log.d("aa", "onResume: ");
+        LoadAdapter();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("aa", "onStop: ");
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("aa", "onPause: ");
+    }
+
+    private void LoadAdapter(){
         if (new GoalsHelper().getAllObjGoalss().size() > 0) {
             mGoalList = new GoalsHelper().getAllObjGoalss();
         } else {
-            mGoalList.add(new ObjGoals(1, "I make 20% more of income in …", System.currentTimeMillis()));
+            if (mGoalAdapter.getItemCount() == 0) {
+                mGoalList.add(new ObjGoals(1, "I make 20% more of income in …", System.currentTimeMillis()));
+            }
         }
         mGoalAdapter.ChangeList(mGoalList);
     }
@@ -133,5 +157,38 @@ public class Activity11 extends AppCompatActivity implements GoalAdapter.GoalAda
     @Override
     public void onDelete(ObjGoals goals) {
 
+    }
+
+    private void Alert() {
+        final Dialog dialog = new Dialog(Activity11.this, R.style.PauseDialog);
+        dialog.setCancelable(true);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_kichout);
+        Button btnok = dialog.findViewById(R.id.btn_ok);
+        Button btcancel = dialog.findViewById(R.id.btn_cancel);
+        final EditText edtcontent = dialog.findViewById(R.id.edt_content);
+
+        btnok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!TextUtils.isEmpty(edtcontent.getText().toString())){
+                    new GoalsHelper().addObjGoals(new ObjGoals(1,edtcontent.getText().toString(),System.currentTimeMillis()));
+                } else {
+                    edtcontent.setTextColor(Color.RED);
+                }
+                dialog.dismiss();
+                onRestart();
+            }
+        });
+
+        btcancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        //dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimationUpBot;
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.show();
     }
 }

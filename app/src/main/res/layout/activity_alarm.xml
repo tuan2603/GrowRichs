@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorApp"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.AlarmActivity">
@@ -17,7 +17,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorApp"
             android:gravity="center_vertical"
             android:padding="16dp">
 
@@ -25,13 +24,10 @@
                 android:id="@+id/tv_title_pick"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="2"
-                android:maxEms="9"
-                android:text="@string/go_to_sleep"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
+                android:text="@string/morning1"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                />
 
             <TimePicker
                 android:id="@+id/timePicker"
@@ -39,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_title_pick"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/next_bt_blur"
                 android:timePickerMode="spinner"
                 style="@style/MyTimePickerWidgetStyle"
                 tools:targetApi="lollipop" />
@@ -51,13 +46,12 @@
                 android:layout_below="@+id/timePicker"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/bg_boder_item_blur_radius"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAppBlur">
+                   >
 
                     <com.nhattuan.growrichs.ultil.TextviewPlus
                         android:id="@+id/tv_ring_tone"
@@ -70,10 +64,10 @@
                         android:paddingStart="8dp"
                         android:maxEms="30"
                         android:text="@string/ring_tone"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="16sp" />
 
-                    <com.nhattuan.growrichs.ultil.ButtonPlus
+                    <Button
                         android:id="@+id/btn_ring_tone"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -85,7 +79,7 @@
                         android:paddingRight="8dp"
                         android:text="@string/default_ringtone"
                         android:textAllCaps="false"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="16sp"
                         tools:ignore="RtlSymmetry" />
 
@@ -94,12 +88,11 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:foreground="@android:color/white"></View>
+                    android:foreground="@android:color/darker_gray"></View>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAppBlur"
                     android:paddingBottom="10dp"
                     android:paddingTop="10dp">
 
@@ -111,14 +104,16 @@
                         android:paddingLeft="8dp"
                         android:paddingStart="8dp"
                         android:src="@drawable/ic_volume_up_black_24dp"
-                        android:tint="@android:color/white" />
+                        android:tint="@android:color/black" />
 
                     <SeekBar
                         android:id="@+id/seekbar_volume"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:progress="100" />
+                        android:progress="100"
+                        android:progressDrawable="@drawable/progress"
+                        />
 
                     <ImageButton
                         android:id="@+id/img_btn_play"
@@ -128,7 +123,7 @@
                         android:paddingEnd="8dp"
                         android:paddingRight="8dp"
                         android:src="@drawable/ic_play_arrow_black_24dp"
-                        android:tint="@android:color/white"
+                        android:tint="@android:color/black"
                         tools:ignore="RtlSymmetry" />
 
                     <Switch
@@ -136,9 +131,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:drawableLeft="@drawable/ic_vibration_white_24dp"
-                        android:drawableStart="@drawable/ic_vibration_white_24dp"
-                        android:drawableTint="@android:color/white"
+                        android:drawableLeft="@drawable/ic_vibration_black_24dp"
+                        android:drawableStart="@drawable/ic_vibration_black_24dp"
+                        android:drawableTint="@android:color/black"
                         android:paddingEnd="8dp"
                         android:paddingRight="8dp"
                         tools:ignore="RtlSymmetry"
@@ -148,16 +143,15 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:foreground="@android:color/white">
-
+                    android:layout_height="2dp"
+                    android:foreground="@android:color/darker_gray">
                 </View>
 
                 <RelativeLayout
                     android:id="@+id/snooze_ly"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAppBlur">
+                   >
 
                     <com.nhattuan.growrichs.ultil.TextviewPlus
                         android:id="@+id/tv_snooze"
@@ -167,11 +161,11 @@
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
                         android:drawableLeft="@drawable/ic_snooze_black_24dp"
-                        android:drawableTint="@android:color/white"
+                        android:drawableTint="@android:color/black"
                         android:paddingLeft="8dp"
                         android:paddingStart="8dp"
                         android:text="@string/snooze"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="16sp" />
 
                     <com.nhattuan.growrichs.ultil.ButtonPlus
@@ -185,7 +179,7 @@
                         android:text="@string/off"
                         android:textAllCaps="false"
                         android:clickable="false"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="16sp" />
                 </RelativeLayout>
 
@@ -222,6 +216,7 @@
             android:foreground="@drawable/ripple_effect"
             android:text="@string/cancel"
             android:textStyle="bold"
+            android:visibility="gone"
             android:textColor="@android:color/black" />
 
         <View
@@ -240,4 +235,5 @@
             android:textStyle="bold"
             android:textColor="@android:color/black" />
     </LinearLayout>
+
 </RelativeLayout>

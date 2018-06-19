@@ -19,7 +19,7 @@ public class Activity9 extends AppCompatActivity {
     private EditText mGoalEditText;
     private SessionManager sessionManager;
     private  ObjGoals goals;
-    private String checkChange;
+    private String checkChange = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,10 @@ public class Activity9 extends AppCompatActivity {
         setContentView(R.layout.activity_9);
         sessionManager = new SessionManager(this);
         sessionManager = new SessionManager(this);
-        goals = sessionManager.getGOAL();
+        goals = new ObjGoals();
+        if (sessionManager.getGOAL() != null) {
+            goals = sessionManager.getGOAL();
+        }
 
         mGoalEditText=findViewById(R.id.edit_goal);
         Button mDoneButton = findViewById(R.id.btn_done);
@@ -45,7 +48,7 @@ public class Activity9 extends AppCompatActivity {
         });
 
         if (goals != null) {
-            if (goals.getmTilte() != null) {
+            if (!TextUtils.isEmpty(goals.getmTilte())) {
                 checkChange = goals.getmTilte();
                 mGoalEditText.setText(goals.getmTilte());
             }
