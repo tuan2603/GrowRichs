@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import com.nhattuan.growrichs.Adapter.OverviewPagerAdapter;
 import com.nhattuan.growrichs.R;
 import com.nhattuan.growrichs.config;
+import com.nhattuan.growrichs.helper.SessionManager;
 import com.nhattuan.growrichs.model.ObjGoals;
 import com.nhattuan.growrichs.ultil.TextviewPlus;
 
@@ -36,14 +37,16 @@ public class VisualizingActivity extends AppCompatActivity {
     private Button btn_secret;
     private Button btn_make_goal;
     private Button btn_close;
-    private TextviewPlus tv_notify;
+    private Button btn_findhere;
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizing);
-        if (getIntent() != null){
-            objGoal = (ObjGoals) getIntent().getSerializableExtra("GOAL");
+        sessionManager = new SessionManager(this);
+        if (sessionManager.getGOAL() != null){
+            objGoal = sessionManager.getGOAL();
             if(objGoal.getmImages()!=null)
             for (int i = 0; i < objGoal.getmImages().length; i++){
                 Log.d(TAG, objGoal.getmImages()[i].toString());
@@ -125,14 +128,13 @@ public class VisualizingActivity extends AppCompatActivity {
         btn_secret = findViewById(R.id.btn_secret);
         btn_make_goal = findViewById(R.id.btn_make_goal);
         btn_close = findViewById(R.id.btn_close);
-        tv_notify = findViewById(R.id.tv_notify);
+        btn_findhere = findViewById(R.id.btn_findhere);
 
 
-        String htmlString="<u><b><i>Confused? Need my help ? Click here</i></b></u>";
-        tv_notify.setText(Html.fromHtml(htmlString));
 
 
-        tv_notify.setOnClickListener(new View.OnClickListener() {
+
+        btn_findhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(config.MakeYourOwnGoalCard));
@@ -143,8 +145,8 @@ public class VisualizingActivity extends AppCompatActivity {
         btn_make_goal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(config.ConfusedNeedmyhelp));
-                startActivity(browserIntent);
+                Intent go11 = new Intent(VisualizingActivity.this, Activity11.class);
+                startActivity(go11);
             }
         });
 

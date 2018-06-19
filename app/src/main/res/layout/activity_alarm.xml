@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.AlarmActivity"
-        android:layout_above="@+id/bottom_ly"
+        android:layout_above="@+id/btn_next"
         >
 
         <RelativeLayout
@@ -109,7 +109,8 @@
                     <SeekBar
                         android:id="@+id/seekbar_volume"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:progress="100"
                         android:progressDrawable="@drawable/progress"
@@ -189,51 +190,13 @@
         </RelativeLayout>
     </ScrollView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/bottom_ly"
-        android:background="@color/cardview_dark_background"
-        android:visibility="invisible"></View>
-
-    <LinearLayout
-        android:id="@+id/bottom_ly"
+    <com.nhattuan.growrichs.ultil.ButtonPlus
+        android:id="@+id/btn_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Next"
+        android:textColor="@android:color/white"
+        android:background="@drawable/next_bt"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <com.nhattuan.growrichs.ultil.ButtonPlus
-            android:id="@+id/cancle_bt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.95"
-            android:background="@drawable/next_bt"
-            android:foreground="@drawable/ripple_effect"
-            android:text="@string/cancel"
-            android:textStyle="bold"
-            android:visibility="gone"
-            android:textColor="@android:color/black" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1"></View>
-
-        <com.nhattuan.growrichs.ultil.ButtonPlus
-            android:id="@+id/btn_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.95"
-            android:background="@drawable/next_bt"
-            android:foreground="@drawable/ripple_effect"
-            android:text="@string/done"
-            android:textStyle="bold"
-            android:textColor="@android:color/black" />
-    </LinearLayout>
-
+        />
 </RelativeLayout>

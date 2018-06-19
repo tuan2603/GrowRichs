@@ -12,7 +12,7 @@
     <string name="default_ringtone">Default ringtone(24)</string>
     <string name="snooze">Snooze</string>
     <string name="off">Off</string>
-    <string name="go_to_sleep">Now Pick The Time Right Before You Go To Sleep...</string>
+    <string name="go_to_sleep">Now Pick The Time To Review Your Goal Before You Go To Sleep At Night …</string>
     <string name="btn_start">Start Visualizing</string>
     <string name="btn_stop">Snooze</string>
     <string name="title_activity_main2">Main2Activity</string>
@@ -43,4 +43,7 @@
     <string name="enter_your_new_idea">Enter your new idea</string>
     <string name="create_new_idea">Create New Idea</string>
     <string name="morning1">A recent research revealed that “Early morning is the best time to come up with new ideas."\n\n" Now pick the time in the morning when you write out 5 new ideas to reach your income goal.</string>
+    <string name="your_goal_here">Your Goal here</string>
+    <string name="visualize_your_goal">Visualize your goal</string>
+    <string name="ideas_to_reach_your_goal">Ideas To Reach Your Goal</string>
 </resources>

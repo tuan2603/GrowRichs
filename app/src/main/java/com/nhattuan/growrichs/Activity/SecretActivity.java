@@ -57,6 +57,7 @@ public class SecretActivity extends AppCompatActivity
     private Button btn_done;
     private ImageButton btn_play;
     private boolean play = false;
+    private SessionManager sessionManager;
     private boolean mUserIsSeeking = false;
 
 
@@ -74,6 +75,10 @@ public class SecretActivity extends AppCompatActivity
         initializeUI();
         initializeSeekbar();
         SetOnClick();
+        sessionManager = new SessionManager(this);
+        if (sessionManager.getOpenApp()) {
+            btn_done.setText("I’m Done With This!");
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -309,8 +314,14 @@ public class SecretActivity extends AppCompatActivity
         btn_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainIntent = new Intent(SecretActivity.this, Activity8.class);
-                startActivity(mainIntent);
+                if (sessionManager.getOpenApp()) {
+                    Intent mainIntent = new Intent(SecretActivity.this, MainActivity.class);
+                    startActivity(mainIntent);
+                } else {
+                    Intent mainIntent = new Intent(SecretActivity.this, Activity8.class);
+                    startActivity(mainIntent);
+                }
+
             }
         });
 

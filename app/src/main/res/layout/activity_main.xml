@@ -1,104 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorApp"
-    android:gravity="center_horizontal"
-    android:padding="16dp"
-    tools:context="com.nhattuan.growrichs.Activity.MainActivity">
+    android:background="@android:color/white"
+    tools:context=".Activity.MainActivity">
 
-    <com.nhattuan.growrichs.ultil.TextviewPlus
-        android:id="@+id/title_tv"
+    <LinearLayout
+        android:id="@+id/ln_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="@string/key_goal"
-        android:textColor="@android:color/white"
-        android:textSize="24sp" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <com.nhattuan.growrichs.ultil.ButtonPlus
-        android:id="@+id/btn_secret"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/next_bt"
-        android:text="@string/serect_listen"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/title_tv"
-        />
-
-
-    <ScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/btn_secret"
-        android:layout_above="@+id/btn_next"
-        android:scrollbars="none"
-       >
-
-        <LinearLayout
+        <com.nhattuan.growrichs.ultil.ButtonPlus
+            android:id="@+id/btn_go9"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            >
+            android:layout_height="wrap_content"
+            android:background="@drawable/next_bt"
+            android:text="@string/your_goal_here"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ln_mr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_edittext"
+                android:gravity="top"
+                android:minHeight="100dp"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:text="In the Morning"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_time_morning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:text="6:00"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <Button
-                android:id="@+id/goal_item_tv"
+                android:id="@+id/btn_morning"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorItemgoal"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:padding="12dp"
-                android:text="Goal 1"
-                android:textAllCaps="false"
-                android:textAlignment="textStart"
-                android:layout_gravity="start"
-                android:textColor="@android:color/white" />
+                android:layout_alignBottom="@+id/ln_mr"
+                android:layout_alignTop="@+id/ln_mr"
+                android:background="@android:color/transparent" />
+        </RelativeLayout>
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/goal_list"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ln_ev"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/title_tv"
-                android:layout_marginTop="8dp"
-                android:scrollbars="none"
-                />
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_edittext"
+                android:gravity="top"
+                android:minHeight="100dp"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingTop="8dp">
 
-            <ImageButton
-                android:id="@+id/btn_add"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_title_af"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:text="In the Evening"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_time_ev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:text="23:00"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_evening"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/ripple_effect_oval"
-                android:tint="@android:color/white"
-                app:srcCompat="@drawable/ic_add_circle_outline_black_24dp"
-                tools:ignore="VectorDrawableCompat" />
+                android:layout_alignBottom="@+id/ln_ev"
+                android:layout_alignTop="@+id/ln_ev"
+                android:background="@android:color/transparent" />
+        </RelativeLayout>
 
-        </LinearLayout>
-    </ScrollView>
 
-    <com.nhattuan.growrichs.ultil.ButtonPlus
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ln_bottom"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/next_bt"
-        android:foreground="@drawable/ripple_effect"
-        android:text="@string/next"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.nhattuan.growrichs.ultil.ButtonPlus
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/next_bt"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.nhattuan.growrichs.ultil.ButtonPlus
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/next_bt"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

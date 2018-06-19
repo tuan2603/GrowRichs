@@ -79,7 +79,8 @@
         <activity android:name=".Activity.NotifyActivity" />
         <activity android:name=".Activity.Activity8" />
         <activity android:name=".Activity.Activity9" />
-        <activity android:name=".Activity.Activity11"></activity>
+        <activity android:name=".Activity.Activity11" />
+        <activity android:name=".Activity.Activity17"></activity>
     </application>
 
 </manifest>

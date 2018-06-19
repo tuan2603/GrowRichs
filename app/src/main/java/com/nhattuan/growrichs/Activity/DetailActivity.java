@@ -38,6 +38,7 @@ public class DetailActivity extends AppCompatActivity implements ImageAdapter.Ur
     private TextView edit_goal;
     private ObjGoals goals;
     private SessionManager sessionManager;
+    private Boolean checkchange = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,6 @@ public class DetailActivity extends AppCompatActivity implements ImageAdapter.Ur
         mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (goals != null) UpdateGoal();
                 onBackPressed();
             }
         });
@@ -106,6 +106,7 @@ public class DetailActivity extends AppCompatActivity implements ImageAdapter.Ur
     }
 
     private void UpdateGoal() {
+        int timer = 2000;
         if (mUriList.size() > 0) {
             String[] images = new String[mUriList.size()];
             for (int i = 0; i < mUriList.size(); i++) {
@@ -115,16 +116,21 @@ public class DetailActivity extends AppCompatActivity implements ImageAdapter.Ur
         } else {
             goals.setmImages(null);
         }
-        sessionManager.setGOAL(goals);
-        if (sessionManager.getGOAL() != null) {
+        if (checkchange){
+            sessionManager.setGOAL(goals);
             Toast.makeText(this, "Updated goal!", Toast.LENGTH_SHORT).show();
+        }else {
+            timer = 100;
+        }
+
+        if (sessionManager.getGOAL() != null) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     Intent mainIntent = new Intent(DetailActivity.this, Activity11.class);
                     startActivity(mainIntent);
                 }
-            }, 2000);
+            }, timer);
         }
     }
 
@@ -144,6 +150,7 @@ public class DetailActivity extends AppCompatActivity implements ImageAdapter.Ur
         if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
             mUriList.addAll(Matisse.obtainResult(data));
             mImageAdapter.ChangeList(mUriList);
+            checkchange = true;
         }
     }
 }

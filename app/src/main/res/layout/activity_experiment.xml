@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorApp"
     tools:context=".Activity.ExperimentActivity">
 
     <LinearLayout
@@ -18,9 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="we"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
+            android:text="Don’t make change too complicated , just begin "
+            android:textStyle="italic"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -42,7 +41,7 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <com.goalcard.goalcard.ultil.ButtonPlus
+            <com.nhattuan.growrichs.ultil.ButtonPlus
                 android:id="@+id/btn_start_visual"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -52,7 +51,7 @@
                 android:text="@string/btn_start"
                 android:textAllCaps="false"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/white" />
 
             <View
                 android:id="@+id/view"
@@ -60,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"></View>
 
-            <com.goalcard.goalcard.ultil.ButtonPlus
+            <com.nhattuan.growrichs.ultil.ButtonPlus
                 android:foreground="@drawable/ripple_effect"
                 android:id="@+id/btn_snooze"
                 android:layout_width="0dp"
@@ -70,7 +69,7 @@
                 android:text="@string/btn_stop"
                 android:textAllCaps="false"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
 

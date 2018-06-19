@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorApp"
     android:orientation="vertical"
     tools:context=".Activity.ListSongActivity">
 
@@ -13,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_light"
         android:text="Select A Ringtone"
         android:padding="16dp"
         android:textSize="28sp"
@@ -50,37 +50,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/colorApp"
-            android:padding="8dp"
             >
             <com.nhattuan.growrichs.ultil.ButtonPlus
                 android:id="@+id/btn_cancel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.95"
+                android:layout_weight="1"
                 android:background="@drawable/next_bt"
                 android:foreground="@drawable/ripple_effect"
                 android:text="@string/cancel"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
 
                 />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1"></View>
 
             <com.nhattuan.growrichs.ultil.ButtonPlus
                 android:id="@+id/btn_done"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.95"
+                android:layout_weight="1"
                 android:background="@drawable/next_bt"
                 android:foreground="@drawable/ripple_effect"
                 android:text="@string/done"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 />
 
         </LinearLayout>

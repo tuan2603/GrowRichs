@@ -73,8 +73,6 @@ public class ExperimentActivity extends AppCompatActivity implements MediaContro
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_experiment);
 
-
-
         unlockScreen();
         initializeUI();
 
@@ -93,7 +91,6 @@ public class ExperimentActivity extends AppCompatActivity implements MediaContro
                 if (objPick != null) {
                     cancelAlarm();
                     if (objPick.getmSnooze() > 0) {
-
                         if (VEVENING) {
                             Intent evening = new Intent(getApplicationContext(), AlarmReceiver.class);
                             eveningIntent = PendingIntent.getBroadcast(
@@ -126,7 +123,7 @@ public class ExperimentActivity extends AppCompatActivity implements MediaContro
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent home = new Intent(ExperimentActivity.this, MainActivity.class);
+                        Intent home = new Intent(ExperimentActivity.this, VisualizingActivity.class);
                         home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(home);
                         finish();

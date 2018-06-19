@@ -56,21 +56,28 @@ public class Activity9 extends AppCompatActivity {
     }
 
     private void AddGoal(final String title) {
+        int timer = 2000;
         goals.setmID(1);
         goals.setmTilte(title);
         if (!checkChange.equals(title)){
             sessionManager.setGOAL(goals);
             Toast.makeText(this, "Added goal!", Toast.LENGTH_SHORT).show();
+        } else {
+            timer = 100;
         }
         if(sessionManager.getGOAL() != null)
         {
+            Intent mainIntent = new Intent(Activity9.this, DetailActivity.class);
+            if (sessionManager.getOpenApp()) {
+                mainIntent = new Intent(Activity9.this, Activity17.class);
+            }
+            final Intent finalMainIntent = mainIntent;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent mainIntent = new Intent(Activity9.this, DetailActivity.class);
-                    startActivity(mainIntent);
+                    startActivity(finalMainIntent);
                 }
-            }, 2000);
+            }, timer);
         } else {
             Toast.makeText(this, "Add goal fail!", Toast.LENGTH_SHORT).show();
         }

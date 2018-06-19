@@ -52,7 +52,6 @@ public class AlarmNightActivity extends AppCompatActivity implements MediaContro
     private TextView tv_title_pick;
     private TimePicker timePicker;
 
-    private Button mCancelButton;
     private Button btn_next;
     private Button btn_ring_tone;
     private Button btn_snooze;
@@ -66,8 +65,6 @@ public class AlarmNightActivity extends AppCompatActivity implements MediaContro
     private static int timeHour;
     private static int timeMinute;
 
-    private String mSleep = "Now Pick The Time Right Before You Go To Sleep…";
-    private String mMorning = "Now Pick The Time You Get Up In the Morning...";
     private AudioManager audioManager = null;
     private SeekBar volumeSeekbar = null;
     private ImageButton imageButtonPlay;
@@ -84,7 +81,7 @@ public class AlarmNightActivity extends AppCompatActivity implements MediaContro
     AlarmManager alarmManager;
     RelativeLayout snoozeLayout;
 
-    private boolean done = false;
+
 
     int snooze = 0;
 
@@ -109,8 +106,6 @@ public class AlarmNightActivity extends AppCompatActivity implements MediaContro
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mapWiget();
 
-
-        tv_title_pick.setText(mSleep);
 
         final long[] pattern = {0, 2000, 1000};
         v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -188,14 +183,7 @@ public class AlarmNightActivity extends AppCompatActivity implements MediaContro
             }
         });
 
-        mCancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentTimer = new Intent(AlarmNightActivity.this, AlarmActivity.class);
-                startActivity(intentTimer);
-                finish();
-            }
-        });
+
         //timePicker.setCurrentHour(timePicker.getCurrentHour());
         setTimePicker();
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
@@ -246,18 +234,16 @@ public class AlarmNightActivity extends AppCompatActivity implements MediaContro
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!done) {
-                    done = true;
+
                     alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
                     Intent myIntent = new Intent(getApplicationContext(), AlarmReceiver.class);
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 1, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                     setAlarm(pendingIntent);
 
-                } else {
-                    Intent intentTimer = new Intent(AlarmNightActivity.this, AlarmActivity.class);
+                    Intent intentTimer = new Intent(AlarmNightActivity.this, MainActivity.class);
                     startActivity(intentTimer);
                     finish();
-                }
+
             }
         });
 
@@ -341,18 +327,16 @@ public class AlarmNightActivity extends AppCompatActivity implements MediaContro
         calendar = Calendar.getInstance();
         timePicker = findViewById(R.id.timePicker);
         btn_next = findViewById(R.id.btn_next);
-        set_timepicker_text_colour();
+        //set_timepicker_text_colour();
         tv_title_pick = findViewById(R.id.tv_title_pick);
         btn_ring_tone = findViewById(R.id.btn_ring_tone);
         swt_vibrator = findViewById(R.id.swt_vibrator);
         btn_snooze = findViewById(R.id.btn_snooze);
         textViewRingtone = findViewById(R.id.tv_ring_tone);
-        mCancelButton = findViewById(R.id.cancle_bt);
+
         btn_ring_tone.setText("Default ringtone(" + ListSong.getListSong().size() + ")");
         snoozeLayout = findViewById(R.id.snooze_ly);
-        if (!done) {
-            btn_next.setText("done");
-        }
+
         snoozeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

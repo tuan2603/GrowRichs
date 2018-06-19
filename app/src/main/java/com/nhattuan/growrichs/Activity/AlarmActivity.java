@@ -54,7 +54,7 @@ public class AlarmActivity extends AppCompatActivity implements MediaController.
     private TextView tv_title_pick;
     private TimePicker timePicker;
 
-    private Button mCancelButton;
+
     private Button btn_next;
     private Button btn_ring_tone;
     private Button btn_snooze;
@@ -186,13 +186,7 @@ public class AlarmActivity extends AppCompatActivity implements MediaController.
         });
         textViewRingtone = findViewById(R.id.tv_ring_tone);
 
-        mCancelButton = findViewById(R.id.cancle_bt);
-        mCancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+
         setTimePicker();
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
@@ -247,8 +241,8 @@ public class AlarmActivity extends AppCompatActivity implements MediaController.
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 2, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 setAlarm(pendingIntent);
 
-                finish();
-                if (alarmNightActivity != null) alarmNightActivity.finish();
+                Intent tonight = new Intent(getApplicationContext(), AlarmNightActivity.class);
+                startActivity(tonight);
             }
         });
 
