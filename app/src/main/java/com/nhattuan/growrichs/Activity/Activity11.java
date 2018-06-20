@@ -51,8 +51,13 @@ public class Activity11 extends AppCompatActivity implements GoalAdapter.GoalAda
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent DetailIntent = new Intent(Activity11.this, AlarmActivity.class);
-                startActivity(DetailIntent);
+                if (sessionManager.getOpenApp()){
+                    Intent go17 = new Intent(Activity11.this, Activity17.class);
+                    startActivity(go17);
+                }else{
+                    Intent DetailIntent = new Intent(Activity11.this, AlarmActivity.class);
+                    startActivity(DetailIntent);
+                }
             }
         });
         mCancelButton = findViewById(R.id.btn_cancel);

@@ -25,14 +25,14 @@ import java.util.List;
 
 public class VisualizingActivity extends AppCompatActivity {
 
-    private static final String TAG =  "VisualizingActivity";
-    private ObjGoals objGoal;
+    private static final String TAG = "VisualizingActivity";
+    private ObjGoals objGoal = null;
     private ViewPager viewPager;
     private LinearLayout sliderDotspanel;
     private int dotscount;
     private ImageView[] dots;
     private OverviewPagerAdapter overviewPagerAdapter;
-    private List<String> listImages;
+    private List<String> listImages = new ArrayList<>();
 
     private Button btn_secret;
     private Button btn_make_goal;
@@ -45,14 +45,14 @@ public class VisualizingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizing);
         sessionManager = new SessionManager(this);
-        if (sessionManager.getGOAL() != null){
+        if (sessionManager.getGOAL() != null) {
             objGoal = sessionManager.getGOAL();
-            if(objGoal.getmImages()!=null)
-            for (int i = 0; i < objGoal.getmImages().length; i++){
-                Log.d(TAG, objGoal.getmImages()[i].toString());
+            if (objGoal.getmImages() != null) {
+                if (objGoal.getmImages().length > 0)
+                    for (int i = 0; i < objGoal.getmImages().length; i++) {
+                        Log.d(TAG, objGoal.getmImages()[i].toString());
+                    }
             }
-
-
         }
         mapWidget();
         setViewPage();
@@ -67,16 +67,17 @@ public class VisualizingActivity extends AppCompatActivity {
 
     private void setViewPage() {
         if (objGoal != null) {
-            if (objGoal.getmImages().length > 0) {
-                for (int i = 0; i < objGoal.getmImages().length; i++) {
-                    listImages.add(objGoal.getmImages()[i]);
+            if (objGoal.getmImages() != null)
+                if (objGoal.getmImages().length > 0) {
+                    for (int i = 0; i < objGoal.getmImages().length; i++) {
+                        listImages.add(objGoal.getmImages()[i]);
+                    }
                 }
-            }
 
             overviewPagerAdapter = new OverviewPagerAdapter(VisualizingActivity.this, listImages, new OverviewPagerAdapter.Click() {
                 @Override
                 public void Click(int position) {
-                    if(listImages.size()>0) {
+                    if (listImages.size() > 0) {
                         Intent introIntent = new Intent(VisualizingActivity.this, IntroActivity.class);
                         introIntent.putStringArrayListExtra("IMAGES", (ArrayList<String>) listImages);
                         introIntent.putExtra("POSITION", position);
@@ -129,9 +130,6 @@ public class VisualizingActivity extends AppCompatActivity {
         btn_make_goal = findViewById(R.id.btn_make_goal);
         btn_close = findViewById(R.id.btn_close);
         btn_findhere = findViewById(R.id.btn_findhere);
-
-
-
 
 
         btn_findhere.setOnClickListener(new View.OnClickListener() {

@@ -314,9 +314,9 @@ public class SecretActivity extends AppCompatActivity
         btn_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                onPause();
                 if (sessionManager.getOpenApp()) {
-                    Intent mainIntent = new Intent(SecretActivity.this, MainActivity.class);
-                    startActivity(mainIntent);
+                   onBackPressed();
                 } else {
                     Intent mainIntent = new Intent(SecretActivity.this, Activity8.class);
                     startActivity(mainIntent);

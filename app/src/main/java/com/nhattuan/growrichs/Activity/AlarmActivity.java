@@ -241,8 +241,14 @@ public class AlarmActivity extends AppCompatActivity implements MediaController.
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 2, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                 setAlarm(pendingIntent);
 
-                Intent tonight = new Intent(getApplicationContext(), AlarmNightActivity.class);
-                startActivity(tonight);
+                if (sessionManager.getOpenApp()){
+                    Intent main = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(main);
+                }else{
+                    Intent tonight = new Intent(getApplicationContext(), AlarmNightActivity.class);
+                    startActivity(tonight);
+                }
+
             }
         });
 

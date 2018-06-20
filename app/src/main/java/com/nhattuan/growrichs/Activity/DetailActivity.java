@@ -120,6 +120,7 @@ public class DetailActivity extends AppCompatActivity implements ImageAdapter.Ur
             sessionManager.setGOAL(goals);
             Toast.makeText(this, "Updated goal!", Toast.LENGTH_SHORT).show();
         }else {
+            sessionManager.setGOAL(goals);
             timer = 100;
         }
 
@@ -127,8 +128,13 @@ public class DetailActivity extends AppCompatActivity implements ImageAdapter.Ur
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent mainIntent = new Intent(DetailActivity.this, Activity11.class);
-                    startActivity(mainIntent);
+                    if (sessionManager.getOpenApp()){
+                        Intent go17 = new Intent(DetailActivity.this, Activity17.class);
+                        startActivity(go17);
+                    }else {
+                        Intent mainIntent = new Intent(DetailActivity.this, Activity11.class);
+                        startActivity(mainIntent);
+                    }
                 }
             }, timer);
         }

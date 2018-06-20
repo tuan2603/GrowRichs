@@ -7,25 +7,23 @@
     android:padding="16dp"
     tools:context=".Activity.VisualizingActivity">
 
-    <com.nhattuan.growrichs.ultil.ButtonPlus
-        android:id="@+id/btn_secret"
+    <TextView
+        android:id="@+id/tv_tep1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Action step #1: Visualize your outcome"
         android:layout_alignParentTop="true"
-        android:background="@drawable/next_bt"
-        android:foreground="@drawable/ripple_effect"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
         android:gravity="center"
-        android:text="Listen To Earl Nightingale"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/ln_slide"
         android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:layout_below="@+id/btn_secret"
-        android:layout_marginTop="16dp"
+        android:layout_below="@+id/tv_tep1"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
 
@@ -49,41 +47,32 @@
 
     </LinearLayout>
 
-    <com.nhattuan.growrichs.ultil.ButtonPlus
-        android:id="@+id/btn_make_goal"
+    <TextView
+        android:id="@+id/tv_tep2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Action step #2"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textStyle="bold"
         android:layout_below="@+id/ln_slide"
-        android:layout_marginTop="16dp"
+        />
+
+    <com.nhattuan.growrichs.ultil.ButtonPlus
+        android:id="@+id/btn_secret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/next_bt"
         android:foreground="@drawable/ripple_effect"
         android:gravity="center"
-        android:text="Add 5 ideas To Your List"
+        android:text="Listen To Earl Nightingale"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/tv_tep2"
+        />
 
-    <!--<RelativeLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/btn_secret"-->
-    <!--android:layout_above="@+id/btn_close"-->
-    <!--&gt;-->
-
-    <!--<com.nhattuan.growrichs.ultil.TextviewPlus-->
-    <!--android:id="@+id/tv_notify"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Got troubles ? Need my help ?"-->
-    <!--android:textSize="14sp"-->
-    <!--android:padding="16dp"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:textColor="@android:color/white"-->
-    <!--android:textStyle="bold|italic"-->
-
-    <!--/>-->
-
-    <!--</RelativeLayout>-->
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -91,7 +80,32 @@
         android:layout_above="@+id/btn_close"
         android:layout_below="@+id/btn_secret">
 
-        <com.nhattuan.growrichs.ultil.TextviewPlus
+        <TextView
+            android:id="@+id/tv_tep3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Action step #3"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            />
+
+        <com.nhattuan.growrichs.ultil.ButtonPlus
+            android:id="@+id/btn_make_goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/next_bt"
+            android:foreground="@drawable/ripple_effect"
+            android:gravity="center"
+            android:text="Add 5 ideas To Your List"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
             android:id="@+id/tv_notify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -107,10 +121,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-
             android:background="@drawable/next_bt"
             android:foreground="@drawable/ripple_effect"
             android:gravity="center"
+            android:textAllCaps="false"
             android:text="Find Me Here"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
@@ -125,6 +139,7 @@
         android:background="@drawable/next_bt"
         android:foreground="@drawable/ripple_effect"
         android:gravity="center"
+        android:textAllCaps="false"
         android:text="I’m Done With This!"
         android:textColor="@android:color/white"
         android:textSize="18sp" />

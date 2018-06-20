@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sessionManager = new SessionManager(this);
+        sessionManager.setOpenApp(true);
 
         btn_go9 = findViewById(R.id.btn_go9);
         btn_cancel = findViewById(R.id.btn_cancel);
@@ -136,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        sessionManager.setOpenApp(true);
         super.onDestroy();
     }
 }
