@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.VisualizingActivity">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:orientation="vertical"
     tools:context=".Activity.VisualizingActivity">
 
     <TextView
         android:id="@+id/tv_tep1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Action step #1: Visualize your outcome"
         android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="Action step #1: Visualize your outcome"
         android:textColor="@android:color/black"
         android:textSize="14sp"
-        android:gravity="center"
         android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/ln_slide"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="196dp"
         android:layout_below="@+id/tv_tep1"
         android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
@@ -32,14 +41,14 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+            android:layout_height="match_parent" />
 
 
         <LinearLayout
             android:id="@+id/sliderDots"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-50dp"
+            android:layout_marginTop="-100dp"
             android:gravity="center_vertical|center_horizontal"
             android:orientation="horizontal">
 
@@ -51,27 +60,26 @@
         android:id="@+id/tv_tep2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ln_slide"
+        android:gravity="center"
         android:text="Action step #2"
         android:textColor="@android:color/black"
         android:textSize="14sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_below="@+id/ln_slide"
-        />
+        android:textStyle="bold" />
 
     <com.nhattuan.growrichs.ultil.ButtonPlus
         android:id="@+id/btn_secret"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tep2"
+        android:layout_marginTop="4dp"
         android:background="@drawable/next_bt"
         android:foreground="@drawable/ripple_effect"
         android:gravity="center"
         android:text="Listen To Earl Nightingale"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:layout_below="@+id/tv_tep2"
-        />
+        android:textSize="18sp" />
 
 
     <RelativeLayout
@@ -84,19 +92,20 @@
             android:id="@+id/tv_tep3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
             android:text="Action step #3"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true"
-            />
+            android:textStyle="bold" />
 
         <com.nhattuan.growrichs.ultil.ButtonPlus
             android:id="@+id/btn_make_goal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_below="@id/tv_tep3"
+            android:layout_marginTop="4dp"
             android:background="@drawable/next_bt"
             android:foreground="@drawable/ripple_effect"
             android:gravity="center"
@@ -109,23 +118,25 @@
             android:id="@+id/tv_notify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/btn_findhere"
+            android:layout_below="@+id/btn_make_goal"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
             android:text="Got troubles ? Need my help ?"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:gravity="center"
             android:textStyle="bold|italic" />
 
         <com.nhattuan.growrichs.ultil.ButtonPlus
             android:id="@+id/btn_findhere"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/tv_notify"
+            android:layout_marginTop="4dp"
             android:background="@drawable/next_bt"
             android:foreground="@drawable/ripple_effect"
             android:gravity="center"
-            android:textAllCaps="false"
             android:text="Find Me Here"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
     </RelativeLayout>
@@ -139,9 +150,10 @@
         android:background="@drawable/next_bt"
         android:foreground="@drawable/ripple_effect"
         android:gravity="center"
-        android:textAllCaps="false"
         android:text="I’m Done With This!"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 
-</RelativeLayout>
+</LinearLayout>
+</ScrollView>
