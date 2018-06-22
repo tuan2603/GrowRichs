@@ -142,7 +142,7 @@ public class Activity11 extends AppCompatActivity implements GoalAdapter.GoalAda
             mGoalList = new GoalsHelper().getAllObjGoalss();
         } else {
             if (mGoalAdapter.getItemCount() == 0) {
-                mGoalList.add(new ObjGoals(1, "I make 20% more of income in …", System.currentTimeMillis()));
+                mGoalList.add(new ObjGoals(1, "", System.currentTimeMillis()));
             }
         }
         mGoalAdapter.ChangeList(mGoalList);
